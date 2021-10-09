@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">NewsDaily</string>
+    <string name="news_feed">News Feed</string>
+    <string name="home">HOME</string>
+    <string name="sports">SPORTS</string>
+    <string name="health">HEALTH</string>
+    <string name="science">SCIENCE</string>
+    <string name="entertainment">ENTERTAINMENT</string>
+    <string name="technology">TECHNOLOGY</string>
+    <string name="latest_news">Latest News</string>
+    <string name="text_heading">Main Heading Displays Here....</string>
+    <string name="text_content">Main content deafult..</string>
+    <string name="text_editor">By Siddharth</string>
+    <string name="text_published">Published At:</string>
 </resources>

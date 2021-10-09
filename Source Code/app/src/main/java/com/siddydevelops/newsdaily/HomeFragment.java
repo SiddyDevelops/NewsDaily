@@ -1,5 +1,6 @@
 package com.siddydevelops.newsdaily;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.siddydevelops.customlottiedialogbox.CustomLottieDialog;
 
 import java.util.ArrayList;
 
@@ -24,6 +27,10 @@ public class HomeFragment extends Fragment {
     Adapter adapter;
     String country = "in";
     private RecyclerView recyclerViewHome;
+
+    Context context;
+
+    CustomLottieDialog customLottieDialog;
 
     @Nullable
     @Override
