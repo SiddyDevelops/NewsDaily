@@ -30,23 +30,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @NonNull
     @Override
     public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_item,null,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_item, null, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull  Adapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, WebViewActivity.class);
-                intent.putExtra("url", articles.get(position).getUrl());
-                context.startActivity(intent);
-            }
+        holder.cardView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, WebViewActivity.class);
+            intent.putExtra("url", articles.get(holder.getAdapterPosition()).getUrl());
+            context.startActivity(intent);
         });
 
-        holder.mtime.setText("Published At:- " + articles.get(position).getPublishedAt());
+        holder.mtime.setText(String.format("Published At:- %s", articles.get(position).getPublishedAt()));
         holder.mauthor.setText(articles.get(position).getAuthor());
         holder.mheading.setText(articles.get(position).getTitle());
         holder.mcontent.setText(articles.get(position).getDescription());
@@ -58,7 +55,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return articles.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView mheading, mcontent, mauthor, mtime;
         CardView cardView;
@@ -73,7 +70,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             mtime = itemView.findViewById(R.id.time);
             imageView = itemView.findViewById(R.id.imageView);
             cardView = itemView.findViewById(R.id.cardView);
-
         }
     }
 }

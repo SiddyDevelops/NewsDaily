@@ -1,4 +1,4 @@
-package com.siddydevelops.newsdaily;
+package com.siddydevelops.newsdaily.api;
 
 import com.siddydevelops.newsdaily.model.News;
 

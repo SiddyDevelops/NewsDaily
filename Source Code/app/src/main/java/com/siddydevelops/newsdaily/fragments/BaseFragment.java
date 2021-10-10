@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.siddydevelops.newsdaily.Adapter;
-import com.siddydevelops.newsdaily.ApiUtilities;
+import com.siddydevelops.newsdaily.api.ApiUtilities;
 import com.siddydevelops.newsdaily.model.Article;
 import com.siddydevelops.newsdaily.model.News;
 
