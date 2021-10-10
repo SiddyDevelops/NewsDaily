@@ -2,8 +2,8 @@ package com.siddydevelops.newsdaily;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.siddydevelops.newsdaily.fragments.EntertainmentFragment;
 import com.siddydevelops.newsdaily.fragments.HealthFragment;
@@ -12,18 +12,18 @@ import com.siddydevelops.newsdaily.fragments.ScienceFragment;
 import com.siddydevelops.newsdaily.fragments.SportsFragment;
 import com.siddydevelops.newsdaily.fragments.TechnologyFragment;
 
-public class PagerAdapter extends FragmentPagerAdapter {
+public class PagerAdapter extends FragmentStateAdapter {
 
     int tabCount;
 
-    public PagerAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
-        tabCount = behavior;
+    public PagerAdapter(@NonNull FragmentActivity fa, int tabCount) {
+        super(fa);
+        this.tabCount = tabCount;
     }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
+    public Fragment createFragment(int position) {
         switch (position) {
             case 0:
                 return new HomeFragment();
@@ -43,7 +43,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return tabCount;
     }
 }

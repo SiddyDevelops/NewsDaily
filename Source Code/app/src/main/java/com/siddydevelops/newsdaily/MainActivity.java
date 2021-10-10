@@ -2,7 +2,7 @@ package com.siddydevelops.newsdaily;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
         mHealth = findViewById(R.id.health);
         mTech = findViewById(R.id.technology);
 
-        ViewPager viewPager = findViewById(R.id.fragmentContainer);
+        ViewPager2 viewPager = findViewById(R.id.fragmentContainer);
         tabLayout = findViewById(R.id.include);
 
-        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), 6);
+        pagerAdapter = new PagerAdapter(this, 6);
         viewPager.setAdapter(pagerAdapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+<<<<<<< HEAD
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
@@ -91,5 +92,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2000);
 
+=======
+>>>>>>> c2eefcc (remove deprecated FragmentPagerAdapter)
     }
 }
