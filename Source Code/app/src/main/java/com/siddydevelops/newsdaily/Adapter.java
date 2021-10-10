@@ -13,18 +13,18 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.siddydevelops.newsdaily.model.Article;
 
-import java.nio.charset.IllegalCharsetNameException;
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     Context context;
-    ArrayList<ModelClass> modelClassArrayList;
+    ArrayList<Article> articles;
 
-    public Adapter(Context context, ArrayList<ModelClass> modelClassArrayList) {
+    public Adapter(Context context, ArrayList<Article> articles) {
         this.context = context;
-        this.modelClassArrayList = modelClassArrayList;
+        this.articles = articles;
     }
 
     @NonNull
@@ -41,21 +41,21 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, WebViewActivity.class);
-                intent.putExtra("url",modelClassArrayList.get(position).getUrl());
+                intent.putExtra("url", articles.get(position).getUrl());
                 context.startActivity(intent);
             }
         });
 
-        holder.mtime.setText("Published At:- " + modelClassArrayList.get(position).getPublishedAt());
-        holder.mauthor.setText(modelClassArrayList.get(position).getAuthor());
-        holder.mheading.setText(modelClassArrayList.get(position).getTitle());
-        holder.mcontent.setText(modelClassArrayList.get(position).getDescription());
-        Glide.with(context).load(modelClassArrayList.get(position).getUrlToImage()).into(holder.imageView);
+        holder.mtime.setText("Published At:- " + articles.get(position).getPublishedAt());
+        holder.mauthor.setText(articles.get(position).getAuthor());
+        holder.mheading.setText(articles.get(position).getTitle());
+        holder.mcontent.setText(articles.get(position).getDescription());
+        Glide.with(context).load(articles.get(position).getUrlToImage()).into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return modelClassArrayList.size();
+        return articles.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

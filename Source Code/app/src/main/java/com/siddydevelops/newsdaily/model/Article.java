@@ -1,10 +1,10 @@
-package com.siddydevelops.newsdaily;
+package com.siddydevelops.newsdaily.model;
 
-public class ModelClass {
+public class Article {
 
     private String author, title, description, url, urlToImage, publishedAt;
 
-    public ModelClass(String author, String title, String description, String url, String urlToImage, String publishedAt) {
+    public Article(String author, String title, String description, String url, String urlToImage, String publishedAt) {
         this.author = author;
         this.title = title;
         this.description = description;

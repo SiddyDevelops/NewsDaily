@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.siddydevelops.newsdaily.Adapter;
 import com.siddydevelops.newsdaily.ApiUtilities;
-import com.siddydevelops.newsdaily.ModelClass;
+import com.siddydevelops.newsdaily.model.Article;
 import com.siddydevelops.newsdaily.R;
-import com.siddydevelops.newsdaily.mainNews;
+import com.siddydevelops.newsdaily.model.News;
 
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ import retrofit2.Response;
 public class EntertainmentFragment extends Fragment {
 
     String apiKEY = "20f26aa9d4274493bbbc92962ed20579";
-    ArrayList<ModelClass> modelClassArrayList;
+    ArrayList<Article> articles;
     Adapter adapter;
     String country = "in";
     private RecyclerView recyclerViewEnt;
@@ -38,9 +38,9 @@ public class EntertainmentFragment extends Fragment {
         View view = inflater.inflate(R.layout.entertainment_fragment,null);
 
         recyclerViewEnt = view.findViewById(R.id.recyclerViewENTERTAINMENT);
-        modelClassArrayList = new ArrayList<>();
+        articles = new ArrayList<>();
         recyclerViewEnt.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new Adapter(getContext(), modelClassArrayList);
+        adapter = new Adapter(getContext(), articles);
         recyclerViewEnt.setAdapter(adapter);
 
         findNews();
@@ -51,18 +51,18 @@ public class EntertainmentFragment extends Fragment {
     private void findNews()
     {
 
-        ApiUtilities.getApiInterface().getCategoryNews(country,category,100,apiKEY).enqueue(new Callback<mainNews>() {
+        ApiUtilities.getApiInterface().getCategoryNews(country,category,100,apiKEY).enqueue(new Callback<News>() {
             @Override
-            public void onResponse(Call<mainNews> call, Response<mainNews> response) {
+            public void onResponse(Call<News> call, Response<News> response) {
                 if(response.isSuccessful())
                 {
-                    modelClassArrayList.addAll(response.body().getArticles());
+                    articles.addAll(response.body().getArticles());
                     adapter.notifyDataSetChanged();
                 }
             }
 
             @Override
-            public void onFailure(Call<mainNews> call, Throwable t) {
+            public void onFailure(Call<News> call, Throwable t) {
 
             }
         });
