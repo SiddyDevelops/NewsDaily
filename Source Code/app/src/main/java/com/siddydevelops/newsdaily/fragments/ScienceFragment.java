@@ -1,4 +1,4 @@
-package com.siddydevelops.newsdaily;
+package com.siddydevelops.newsdaily.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,31 +11,38 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.siddydevelops.newsdaily.Adapter;
+import com.siddydevelops.newsdaily.ApiUtilities;
+import com.siddydevelops.newsdaily.ModelClass;
+import com.siddydevelops.newsdaily.R;
+import com.siddydevelops.newsdaily.mainNews;
+
 import java.util.ArrayList;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SportsFragment extends Fragment {
+public class ScienceFragment extends Fragment {
 
     String apiKEY = "20f26aa9d4274493bbbc92962ed20579";
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter;
     String country = "in";
-    private RecyclerView recyclerViewSports;
-    private String category = "sports";
+    private RecyclerView recyclerViewScience;
+    private String category = "science";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.sports_fragment,null);
+        View view = inflater.inflate(R.layout.science_fragment,null);
 
-        recyclerViewSports = view.findViewById(R.id.recyclerViewSPORTS);
+        recyclerViewScience = view.findViewById(R.id.recyclerViewSCIENCE);
         modelClassArrayList = new ArrayList<>();
-        recyclerViewSports.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewScience.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new Adapter(getContext(), modelClassArrayList);
-        recyclerViewSports.setAdapter(adapter);
+        recyclerViewScience.setAdapter(adapter);
 
         findNews();
 

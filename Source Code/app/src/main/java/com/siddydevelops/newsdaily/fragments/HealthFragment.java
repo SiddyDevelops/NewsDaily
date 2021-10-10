@@ -1,4 +1,4 @@
-package com.siddydevelops.newsdaily;
+package com.siddydevelops.newsdaily.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,31 +11,37 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.siddydevelops.newsdaily.Adapter;
+import com.siddydevelops.newsdaily.ApiUtilities;
+import com.siddydevelops.newsdaily.ModelClass;
+import com.siddydevelops.newsdaily.R;
+import com.siddydevelops.newsdaily.mainNews;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TechnologyFragment extends Fragment {
+public class HealthFragment extends Fragment {
 
     String apiKEY = "20f26aa9d4274493bbbc92962ed20579";
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter;
     String country = "in";
-    private RecyclerView recyclerViewTech;
-    private String category = "technology";
+    private RecyclerView recyclerViewHealth;
+    private String category = "health";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.technology_fragment,null);
+        View view = inflater.inflate(R.layout.health_fragment,null);
 
-        recyclerViewTech = view.findViewById(R.id.recyclerViewTECH);
+        recyclerViewHealth = view.findViewById(R.id.recyclerViewHEALTH);
         modelClassArrayList = new ArrayList<>();
-        recyclerViewTech.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewHealth.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new Adapter(getContext(), modelClassArrayList);
-        recyclerViewTech.setAdapter(adapter);
+        recyclerViewHealth.setAdapter(adapter);
 
         findNews();
 

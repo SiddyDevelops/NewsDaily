@@ -5,6 +5,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.siddydevelops.newsdaily.fragments.EntertainmentFragment;
+import com.siddydevelops.newsdaily.fragments.HealthFragment;
+import com.siddydevelops.newsdaily.fragments.HomeFragment;
+import com.siddydevelops.newsdaily.fragments.ScienceFragment;
+import com.siddydevelops.newsdaily.fragments.SportsFragment;
+import com.siddydevelops.newsdaily.fragments.TechnologyFragment;
+
 public class PagerAdapter extends FragmentPagerAdapter {
 
     int tabCount;
