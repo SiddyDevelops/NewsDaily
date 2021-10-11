@@ -1,15 +1,15 @@
 package com.siddydevelops.newsdaily;
 
+import android.os.Bundle;
+import android.os.Handler;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Handler;
-
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+
 import com.siddydevelops.customlottiedialogbox.CustomLottieDialog;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     Toolbar mToolbar;
 
     CustomLottieDialog customLottieDialog;
-
-    String apiKEY = "20f26aa9d4274493bbbc92962ed20579";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,9 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-<<<<<<< HEAD
-
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -91,8 +86,5 @@ public class MainActivity extends AppCompatActivity {
                 customLottieDialog.dismiss();
             }
         }, 2000);
-
-=======
->>>>>>> c2eefcc (remove deprecated FragmentPagerAdapter)
     }
 }
