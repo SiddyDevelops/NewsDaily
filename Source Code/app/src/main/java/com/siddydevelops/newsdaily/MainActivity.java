@@ -1,15 +1,15 @@
 package com.siddydevelops.newsdaily;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
-
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+
 import com.siddydevelops.customlottiedialogbox.CustomLottieDialog;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     Toolbar mToolbar;
 
     CustomLottieDialog customLottieDialog;
-
-    String apiKEY = "20f26aa9d4274493bbbc92962ed20579";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
         mHealth = findViewById(R.id.health);
         mTech = findViewById(R.id.technology);
 
-        ViewPager viewPager = findViewById(R.id.fragmentContainer);
+        ViewPager2 viewPager = findViewById(R.id.fragmentContainer);
         tabLayout = findViewById(R.id.include);
 
-        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), 6);
+        pagerAdapter = new PagerAdapter(this, 6);
         viewPager.setAdapter(pagerAdapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -81,8 +79,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -90,6 +86,5 @@ public class MainActivity extends AppCompatActivity {
                 customLottieDialog.dismiss();
             }
         }, 2000);
-
     }
 }

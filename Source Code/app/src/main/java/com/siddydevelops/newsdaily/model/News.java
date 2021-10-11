@@ -1,14 +1,14 @@
-package com.siddydevelops.newsdaily;
+package com.siddydevelops.newsdaily.model;
 
 import java.util.ArrayList;
 
-public class mainNews {
+public class News {
 
     private String status;
     private String totalResults;
-    private ArrayList<ModelClass> articles;
+    private ArrayList<Article> articles;
 
-    public mainNews(String status, String totalResults, ArrayList<ModelClass> articles) {
+    public News(String status, String totalResults, ArrayList<Article> articles) {
         this.status = status;
         this.totalResults = totalResults;
         this.articles = articles;
@@ -30,11 +30,11 @@ public class mainNews {
         this.totalResults = totalResults;
     }
 
-    public ArrayList<ModelClass> getArticles() {
+    public ArrayList<Article> getArticles() {
         return articles;
     }
 
-    public void setArticles(ArrayList<ModelClass> articles) {
+    public void setArticles(ArrayList<Article> articles) {
         this.articles = articles;
     }
 }
