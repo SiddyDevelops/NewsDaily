@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/theme_bg"
     tools:context=".WebViewActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="8dp"
-        android:background="@color/white"
+        android:background="@color/theme_bg"
         android:id="@+id/toolbar">
 
         <RelativeLayout
@@ -21,10 +22,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Latest News"
+                android:text="@string/latest_news"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColor="#03A9F4"/>
+                android:textColor="@color/tab"/>
 
         </RelativeLayout>
 

@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="theme_bg">#1B1C1E</color>
+    <color name="card_bg">#454545</color>
+    <color name="bg_varient">#303030</color>
+
+    <color name="text_color">#F5F5F5</color>
+    <color name="text_color2">#F9F6EE</color>
+
+    <color name="tab">#C2D5E4</color>
+    <color name="tab_selected">#E64556</color>
+    <color name="tab_indicator">#DF807E</color>
+    <color name="grey">#808080</color>
+
 </resources>

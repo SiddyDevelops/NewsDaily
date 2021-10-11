@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="275dp"
+    android:background="@color/bg_varient"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -16,17 +17,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/card_bg"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="65dp"
                 android:padding="5dp"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:id="@+id/mainheading"
-                android:textColor="@color/black"
-                android:text="Main Heading Displays Here...."
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/text_color"
+                android:text="@string/text_heading"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -39,13 +43,17 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/text_color2"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_marginStart="5dp"
                     android:layout_weight="1"
                     android:ellipsize="end"
-                    android:maxLines="6"
+                    android:maxLines="5"
+                    android:includeFontPadding="false"
                     android:padding="5dp"
                     android:id="@+id/content"
                     android:textSize="15sp"
-                    android:text="Main content deafult.."/>
+                    android:text="@string/text_content"/>
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -61,7 +69,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="By Siddharth"
+                android:text="@string/text_editor"
+                android:layout_marginStart="5dp"
                 android:textSize="13sp"
                 android:textStyle="italic"
                 android:id="@+id/author"
@@ -73,8 +82,9 @@
                 android:layout_height="match_parent"
                 android:id="@+id/time"
                 android:padding="5dp"
-                android:textColor="@color/black"
-                android:text="Published At: "
+                android:layout_marginStart="5dp"
+                android:textColor="@color/grey"
+                android:text="@string/text_published"
                 android:textStyle="bold"
                 android:textSize="12sp"/>
             
